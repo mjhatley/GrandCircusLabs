@@ -8,9 +8,9 @@ namespace lab6
         public static void Main(string[] args)
         {
             string response;
+            Console.WriteLine("Welcome to the Pig Latin Translator!");
             do
             {
-                Console.WriteLine("Welcome to the Pig Latin Translator!");
 
                 Console.WriteLine("Enter a word to be translated!");
                 string input = Console.ReadLine();
@@ -31,9 +31,12 @@ namespace lab6
 
                     while (!isVowel(firstletter))
                     {
-                        input = input.Remove(0, 1);
+                        
                         input = input + firstletter;
+                        input = input.Remove(0, 1);
+
                         firstletter = input[0];
+
                     }
 
                     input = input + "ay";
