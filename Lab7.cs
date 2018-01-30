@@ -49,9 +49,13 @@ namespace notes
             hometown.Add(8, "Grand Rapids, Mi");
             hometown.Add(9, "Raleigh, NC");
 
-            input = int.Parse(Console.ReadLine());
+                input = int.Parse(Console.ReadLine());
 
-
+                while (!students.Contains(input))
+                {
+                    Console.WriteLine("That student does not exist. Please try again (enter a number 1-9):");
+                    input = int.Parse(Console.ReadLine());
+                }
 
                     
                 
@@ -63,28 +67,41 @@ namespace notes
             //Console.WriteLine("That student does not exist. Please try again. (enter a number 1-20");
 
                 Console.WriteLine("student " + input + " is " + (students[input]) + " What would you like to know about " + (students[input]) + "? (enter hometown or Favorite food)");
+
+
                 response = Console.ReadLine();
+
+               
+
+
                 if (response.ToLower() == "hometown")
                 {
                     Console.WriteLine((students[input]) + " is from " + (hometown[input]) + " would you like to know more? (enter yes or no");
                     response = Console.ReadLine();
 
                 }
+               
 
                 if (response.ToLower() == "favorite food")
                 {
                     Console.WriteLine((students[input]) + "'s favorite food is " + (food[input]) + ". Would you like to know more? (enter yes or no)");
                     response = Console.ReadLine();
                 }
+                /*while (!hometown.Contains(response) && (!food.Contains(response)))
+                {
+                    Console.WriteLine("That is an incorrect entry. Please try again (hometown or favorite food):");
+                    response = (Console.ReadLine());
+
+                }
+*/
+
             } while (response.ToLower() == "yes");
 
             Console.WriteLine("Thank you!");
 
             //Console.WriteLine("That data does not exist. Please try again. (enter hometown or faVorite food");
 
-            //Console.WriteLine(name + "'s favorite food is " + food + "would you like to know more? (enter yes or no" );
-
-            //Console.WriteLine("thanks!");
+            ;
         }
     }
 }
