@@ -11,12 +11,20 @@ namespace lab4_
             {
 
                 Console.WriteLine("Hello! enter an integer between 1 - 100");
-                long x = long.Parse(Console.ReadLine());
-                long y = 1;
-                for (int i = 1; i <= x; i++)
+                try
                 {
-                    y = y * i;
+                    long x = long.Parse(Console.ReadLine());
+                    long y = 1;
+                    for (int i = 1; i <= x; i++)
+                    {
+                        y = y * i;
 
+                    }
+                }
+                catch (FormatException)
+                {
+                   Console.WriteLine("Incorrect input, try again.");
+                    continue;
                 }
                 Console.WriteLine(y);
 

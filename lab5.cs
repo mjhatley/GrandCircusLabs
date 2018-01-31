@@ -9,7 +9,13 @@ namespace lab5
             string input = "";
 
             Console.WriteLine("Would you like to roll the dice? y / n");
-            input = Console.ReadLine();
+            try
+            {
+                input = (Console.ReadLine());
+
+            }
+            catch (FormatException)
+
 
 
 
@@ -35,7 +41,7 @@ namespace lab5
             }
 
 
-                //answer == "y"
+                
 
 
 

@@ -17,7 +17,12 @@ namespace EXPONENTS
         private static void GetInput()
         {
             Console.Write("Please enter a number between 1 - 100: ");
-            int Input = int.Parse(Console.ReadLine());
+            try
+            {
+                int Input = int.Parse(Console.ReadLine()); 
+
+            }
+            catch (FormatException)
 
             CalculateInputPower(Input, 2);
             CalculateInputPower(Input, 3);
